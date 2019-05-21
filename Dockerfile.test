@@ -1,0 +1,14 @@
+FROM python:3.7
+
+COPY dev-requirements.txt ./
+
+RUN pip install -r dev-requirements.txt
+
+Add / /app
+Add /com/stondo /app/com/stondo
+
+WORKDIR /app
+
+ENV PYTHONPATH="$PYTHONPATH:/app"
+
+CMD tox -e lint && tox
