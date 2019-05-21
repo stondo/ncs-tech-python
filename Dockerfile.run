@@ -1,0 +1,12 @@
+FROM python:3.7-alpine
+
+COPY requirements.txt ./
+
+RUN pip install -r requirements.txt
+
+Add / /app
+Add /com/stondo /app/com/stondo
+
+WORKDIR /app
+
+CMD ["python", "main.py"]
